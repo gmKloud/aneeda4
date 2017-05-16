@@ -20,8 +20,7 @@
   <button ion-button (click)="listenForSpeech()">Listen</button>
 
   <ion-card>
-    <ion-card-content *ngFor="let speech of speechList">
+    <ion-content *ngFor="let speech of speechList">
       <p>{{speech}}</p>
+    </ion-content>
   </ion-card>
-
-</ion-content>

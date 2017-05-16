@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SpeechRecognition, SpeechRecognitionListeningOptionsAndroid, SpeechRecognitionListeningOptionsIOS } from '@ionic-native/speech-recognition';
 import { NavController, Platform } from 'ionic-angular';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-home',

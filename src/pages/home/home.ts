@@ -18,4 +18,15 @@ export class HomePage {
     return isAvailable;
   }
 
+  async getPermission():Promise<void> {
+    try {
+        const permission = this.speech.requestPermission()
+        console.log(permission);
+        return permission;
+      }
+      catch(e) {
+        console.log(e);
+    }
+  }
+
 }

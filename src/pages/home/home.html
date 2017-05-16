@@ -13,4 +13,15 @@
 
   <button ion-button (click)="getPermission()">Get Permission!</button>
 
+  <button ion-button (click)="hasPermission()">Has Permission</button>
+
+  <button ion-button (click)="getSupportedLang()">Lists Supported Languages</button>
+
+  <button ion-button (click)="listenForSpeech()">Listen</button>
+
+  <ion-card>
+    <ion-card-content *ngFor="let speech of speechList">
+      <p>{{speech}}</p>
+  </ion-card>
+
 </ion-content>

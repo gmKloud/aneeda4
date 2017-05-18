@@ -13,12 +13,9 @@ export class HomePage {
   androidOptions: SpeechRecognitionListeningOptionsAndroid;
   iosOptions: SpeechRecognitionListeningOptionsIOS;
 
-  constructor(private speech: SpeechRecognition, public navCtrl: NavController, private platform: Platform) {
-
-  }
+  constructor(private speech: SpeechRecognition, public navCtrl: NavController, private platform: Platform) { }
 
   listenForSpeech():void {
-
     this.androidOptions = {
       prompt: "Aneeda..."
     }
@@ -26,14 +23,23 @@ export class HomePage {
     this.iosOptions = {
       language: "en-US"
     }
-
+// This is where the app listens for your speech and lists what it has perceived.
+//Android section - speech is perceived in --speechpercept-- variable
     if(this.platform.is('android')) {
       this.speech.startListening(this.androidOptions).subscribe(data => this.speechPercept = data, errors => console.log(errors))
     }
+    // This is where the app listens for your speech and lists what it has perceived.
+    //IOS section - speech is perceived in --speechpercept-- variable
     else if (this.platform.is('ios')) {
       this.speech.startListening(this.iosOptions).subscribe(data => this.speechPercept = data, errors => console.log(errors))
     }
   }
+
+
+  // firstPercept():string {
+  //   console.log(this.speechPercept[0]);
+  //   return this.speechPercept[0];
+  // }
 
   async isSpeechSupported():Promise<boolean> {
     const isAvailable = await this.speech.isRecognitionAvailable();
